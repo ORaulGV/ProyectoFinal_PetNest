@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Views.AgregarPetPage"
+             xmlns:vm="clr-namespace:ProyectoFinal.ViewModels"
+             Title="Agregar Mascota"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:AgregarPetViewModel />
+    </ContentPage.BindingContext>
+    
+    
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Nombre:" TextColor="{DynamicResource TextColor}" />
+            <Entry Placeholder="Nombre"
+               Text="{Binding Mascota.PetName}"
+               PlaceholderColor="Gray"
+               TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="Especie:" TextColor="{DynamicResource TextColor}" />
+            <Entry Placeholder="Especie"
+               Text="{Binding Mascota.Specie}"
+               PlaceholderColor="Gray"
+               TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="Edad:" TextColor="{DynamicResource TextColor}" />
+            <Entry Placeholder="Edad"
+                   Text="{Binding Mascota.Age}"
+                   Keyboard="Numeric"
+                   PlaceholderColor="Gray"
+                   TextColor="{DynamicResource TextColor}" />
+
+            <Button Text="Guardar"
+                    Command="{Binding GuardarCommand}"
+                    BackgroundColor="#2774E6"
+                    TextColor="White"
+                    CornerRadius="10" />
+
+            <Button Text="Regresar"
+                    BackgroundColor="#2774E6"
+                    TextColor="White"
+                    CornerRadius="10" 
+                    Clicked="OnRegresarClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

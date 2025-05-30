@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Views.AjustesPage"
+             Background="{DynamicResource BackgroundColor}">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Configuración"
+           FontSize="24"
+           FontAttributes="Bold"
+           TextColor="{DynamicResource TextColor}" />
+
+            <Switch x:Name="DarkModeSwitch"
+            Toggled="OnDarkModeToggled" 
+                    HorizontalOptions="Start"/>
+
+            <Label Text="Modo oscuro"
+           TextColor="{DynamicResource TextColor}" />
+
+
+        <BoxView HeightRequest="1" Color="Gray" />
+
+            <Label Text="Acerca de"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="PetNest App es una aplicación diseñada para ayudarte a cuidar mejor de tus mascotas. Aquí puedes llevar el control de alarmas, información básica y más."
+                   FontSize="16"
+                   TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="Versión 1.0.0"
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="End" />
+
+            <Grid>
+                <Image Source="logocolor.png"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,43 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Views.AgregarAlarmaPage"
+             Title="Agregar Alarma"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Nombre de la alarma:" TextColor="{DynamicResource TextColor}" />
+            <Entry Placeholder="Nombre (Comida/Vacuna para...)"
+                   Text="{Binding Alarma.AlarmName}"
+                   PlaceholderColor="Gray"
+                   TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="Hora:" TextColor="{DynamicResource TextColor}" />
+            <Entry Placeholder="Hora (formato HH:MM)"
+                   Text="{Binding Alarma.Hour}"
+                   Keyboard="Numeric"
+                   PlaceholderColor="Gray"
+                   TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="Frecuencia:" TextColor="{DynamicResource TextColor}" />
+            <Entry Placeholder="Frecuencia (diaria, semanal...)"
+                   Text="{Binding Alarma.Frecuency}"
+                   PlaceholderColor="Gray"
+                   TextColor="{DynamicResource TextColor}" />
+
+
+            <Button Text="Guardar"
+                    Command="{Binding GuardarCommand}"
+                    BackgroundColor="#2774E6"
+                    TextColor="White"
+                    CornerRadius="10" />
+
+            <Button Text="Regresar"
+                    BorderColor="#2774E6"
+                    BackgroundColor="#2774E6"
+                    TextColor="White"
+                    CornerRadius="10" 
+                    Clicked="OnRegresarClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

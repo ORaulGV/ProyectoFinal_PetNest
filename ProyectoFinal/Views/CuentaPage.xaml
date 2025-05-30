@@ -1,0 +1,42 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ProyectoFinal.ViewModels"
+             x:Class="ProyectoFinal.Views.CuentaPage">
+
+    <ContentView.BindingContext>
+        <vm:MainPagePetsViewModel />
+    </ContentView.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="25">
+
+            <Label Text="Nombre"
+           FontAttributes="Bold"
+           TextColor="{DynamicResource TextColor}" />
+            <Label Text="{Binding UsuarioActual.Username}" 
+           FontSize="18" 
+           TextColor="{DynamicResource TextColor}" />
+
+            <Label Text="Correo"
+           FontAttributes="Bold"
+           TextColor="{DynamicResource TextColor}" />
+            <Label Text="{Binding UsuarioActual.Mail}" 
+           FontSize="18" 
+           TextColor="{DynamicResource TextColor}" />
+
+            <Button Text="Cerrar Sesión"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    CornerRadius="10"
+                    Clicked="CerrarSesion_Clicked" />
+
+            <Button Text="Eliminar Cuenta"
+                    Command="{Binding EliminarCuentaCommand}"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    CornerRadius="10"
+                    />
+
+        </StackLayout>
+    </ScrollView>
+</ContentView>

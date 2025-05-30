@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Views.LoginPage"
+             xmlns:vm="clr-namespace:ProyectoFinal.ViewModels"
+             BackgroundColor="{DynamicResource BackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+
+            <!-- Título -->
+            <Label Text="Iniciar Sesión" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#2774E6" />
+
+            <!-- Campo Correo -->
+            <Entry x:Name="Correo"
+                   Placeholder="Correo electrónico"
+                   Keyboard="Email"
+                   Text="{Binding Email}"
+                   TextColor="{DynamicResource TextColor}"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="{DynamicResource BackgroundColor}"/>
+
+            <!-- Campo Contraseña -->
+            <Entry x:Name="Contraseña"
+                   Placeholder="Contraseña"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                   TextColor="{DynamicResource TextColor}"
+                   PlaceholderColor="Gray" 
+                   BackgroundColor="{DynamicResource BackgroundColor}"/>
+
+            <!-- Label Registrarse -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                <Label Text="¿No tienes cuenta? " 
+                       FontSize="14"
+                       TextColor="#2774E6"/>
+                <Label Text=" Registrarse"
+                       TextColor="#2774E6"
+                       FontAttributes="Bold"
+                       FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <!-- Botón Entrar -->
+            <Button Text="Entrar"
+                    Command="{Binding IniciarSesionCommand}"
+                    BackgroundColor="#2774E6"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
+    

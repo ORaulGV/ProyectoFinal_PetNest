@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Views.SplashPage"
+             BackgroundColor="#2774E6"
+             NavigationPage.HasNavigationBar="False" >
+
+    <Grid>
+        <Image Source="logo.png"
+               WidthRequest="150"
+               HeightRequest="150"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Grid>
+    
+</ContentPage>

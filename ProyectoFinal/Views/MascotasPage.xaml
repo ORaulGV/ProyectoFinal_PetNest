@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:vm="clr-namespace:ProyectoFinal.ViewModels"  
+             x:Class="ProyectoFinal.Views.MascotasPage"  
+>
+
+    <ContentView.BindingContext>  
+        <vm:MascotasViewModel />  
+    </ContentView.BindingContext>  
+
+    <Grid>  
+ 
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15" BindableLayout.ItemsSource="{Binding Mascotas} ">  
+                <BindableLayout.ItemTemplate>  
+                    <DataTemplate>  
+                        <Border Background="{DynamicResource BackSecondaryColor}"  
+                                StrokeThickness="0"  
+                                Padding="20">  
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SeleccionarMascotaCommand, 
+                                                      Source={x:Reference Name=Raiz}}" 
+                                                      CommandParameter="{Binding}" />
+                            </Border.GestureRecognizers>  
+
+                            <Label Text="{Binding PetName}"  
+                                   FontSize="18"  
+                                   TextColor="#2774E6"
+                                   FontAttributes="Bold"/>  
+                        </Border>  
+                    </DataTemplate>  
+                </BindableLayout.ItemTemplate>  
+            </StackLayout>  
+        </ScrollView>  
+
+        <!-- Botón flotante -->  
+        <Button Text="＋"  
+                FontSize="24"  
+                CornerRadius="30"  
+                WidthRequest="60"  
+                HeightRequest="60"  
+                BackgroundColor="#2774E6"  
+                TextColor="White"  
+                HorizontalOptions="End"  
+                VerticalOptions="End"  
+                Margin="20"  
+                Clicked="OnAddPetClicked" />  
+    </Grid>  
+</ContentView>
