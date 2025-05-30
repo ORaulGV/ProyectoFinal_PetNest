@@ -11,11 +11,11 @@ namespace ProyectoFinal.Services
         };
 
         //Lamada a la APi de Usuarios para el Inicio de Sesión
-        public static async Task<Usuario>? LoginAsync(string email, string password)
+        public static async Task<Usuario?> LoginAsync(string username, string password)
         {
             var payload = new
             {
-                Mail = email,
+                Username = username,
                 Password = password
             };
             var response = await _httpClient.PostAsJsonAsync("api/User/login", payload);

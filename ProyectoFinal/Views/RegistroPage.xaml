@@ -24,6 +24,8 @@
                    TextColor="{DynamicResource TextColor}" 
                    PlaceholderColor="Gray"
                    BackgroundColor="{DynamicResource BackgroundColor}"/>
+            
+            
             <Entry Placeholder="Contraseña" IsPassword="True"
                    Text="{Binding Password}"
                    TextColor="{DynamicResource TextColor}" 

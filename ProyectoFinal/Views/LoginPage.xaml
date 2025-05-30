@@ -21,10 +21,9 @@
                    TextColor="#2774E6" />
 
             <!-- Campo Correo -->
-            <Entry x:Name="Correo"
-                   Placeholder="Correo electrónico"
-                   Keyboard="Email"
-                   Text="{Binding Email}"
+            <Entry x:Name="Usuario"
+                   Placeholder="Nombre completo"
+                   Text="{Binding Username}"
                    TextColor="{DynamicResource TextColor}"
                    PlaceholderColor="Gray"
                    BackgroundColor="{DynamicResource BackgroundColor}"/>

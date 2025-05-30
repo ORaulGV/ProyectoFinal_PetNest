@@ -9,7 +9,7 @@ namespace ProyectoFinal.ViewModels
     public partial class LoginViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string email;
+        private string username;
 
         [ObservableProperty]
         private string password;
@@ -17,7 +17,8 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         public async Task IniciarSesion()
         {
-            var usuario = await UserServices.LoginAsync(Email, Password);
+            Console.WriteLine($"Username: {Username}, Password: {Password}");
+            var usuario = await UserServices.LoginAsync(Username, Password);
 
             if (usuario !=null)
             {
