@@ -5,6 +5,7 @@ public partial class MainPagePets : ContentPage
 
     private MascotasViewModel mascotasVM = new();
     private AlarmsViewModel alarmsVM = new();
+    private UserViewModel userVM = new();
     public MainPagePets()
     {
         InitializeComponent();
@@ -12,6 +13,7 @@ public partial class MainPagePets : ContentPage
         ShowPetsPage(null, null);
         PetsView.BindingContext = new MascotasViewModel();   
         AlarmsView.BindingContext = new AlarmsViewModel();
+        CuentaView.BindingContext = new UserViewModel();
     }
 
     protected override void OnAppearing()
@@ -54,5 +56,9 @@ public partial class MainPagePets : ContentPage
         PetsView.IsVisible = false;
         AlarmsView.IsVisible = false;
         CuentaView.IsVisible = true;
+        if (CuentaView.BindingContext is UserViewModel uvm)
+        {
+            uvm.CargarUsuarioCommand.Execute(null);
+        }
     }
 }

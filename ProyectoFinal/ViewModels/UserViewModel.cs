@@ -12,7 +12,19 @@ namespace ProyectoFinal.ViewModels
         [ObservableProperty]
         private ObservableCollection<Usuario> usuarios = new();
 
-        public Usuario UsuarioActual => SessionManager.UsuarioActual!;
+        [ObservableProperty]
+        private Usuario usuarioActual;
+
+        public UserViewModel()
+        {
+            CargarUsuario();
+        }
+
+        [RelayCommand]
+        public void CargarUsuario()
+        {
+            UsuarioActual = SessionManager.UsuarioActual;
+        }
 
         //Metodo para eliminar la cuenta de tu usuario
         [RelayCommand]
@@ -25,6 +37,8 @@ namespace ProyectoFinal.ViewModels
                 if (eliminado)
                 {
                     SessionManager.CerrarSesion();
+                    UsuarioActual = null; // <-- Limpia los datos del usuario
+                    Application.Current.MainPage = new AppShell();
                     await Shell.Current.GoToAsync("//LoginPage");
                 }
                 else

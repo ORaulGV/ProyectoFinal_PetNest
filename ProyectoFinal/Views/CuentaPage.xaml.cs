@@ -1,3 +1,4 @@
+using ProyectoFinal.Models;
 using ProyectoFinal.Services;
 using ProyectoFinal.ViewModels;
 namespace ProyectoFinal.Views;
@@ -16,7 +17,6 @@ public partial class CuentaPage : ContentView
         if (!confirm) return;
 
         SessionManager.CerrarSesion();
-
         // Reemplaza toda la MainPage para reiniciar la navegación correctamente
         Application.Current.MainPage = new AppShell(); // Asegúrate que AppShell esté bien configurado
 
