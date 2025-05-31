@@ -17,13 +17,14 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         public async Task IniciarSesion()
         {
-            Console.WriteLine($"Username: {Username}, Password: {Password}");
-            var usuario = await UserServices.LoginAsync(Username, Password);
+            System.Diagnostics.Debug.WriteLine($"Username: {Username}, Password: {Password}");
+
+            var usuario = await UserServices.LoginAsync(username, password);
 
             if (usuario !=null)
             {
                 SessionManager.IniciarSesion(usuario);
-                await Shell.Current.GoToAsync("//MainPage");
+                await Shell.Current.GoToAsync("//MainPagePets");
             }
             else
             {

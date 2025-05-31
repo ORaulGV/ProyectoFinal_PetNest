@@ -7,10 +7,11 @@ public partial class MainPagePets : ContentPage
     public MainPagePets()
     {
         InitializeComponent();
+        BindingContext = new MainPagePetsViewModel();
         ShowPetsPage(null, null);
         PetsView.BindingContext = new MascotasViewModel();
         AlarmsView.BindingContext = new AlarmsViewModel();
-        BindingContext = new MainPagePetsViewModel();
+        
     }
 
     private void ShowPetsPage(object sender, EventArgs e)

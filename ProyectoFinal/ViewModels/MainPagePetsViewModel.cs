@@ -11,7 +11,7 @@ namespace ProyectoFinal.ViewModels
 
         public MainPagePetsViewModel()
         {
-            usuarioActual = SessionManager.UsuarioActual;
+            UsuarioActual = SessionManager.UsuarioActual;
         }
     }
 }

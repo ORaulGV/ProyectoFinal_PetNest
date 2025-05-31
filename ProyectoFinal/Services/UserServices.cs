@@ -15,7 +15,9 @@ namespace ProyectoFinal.Services
         {
             var payload = new
             {
+                idUser = 0,
                 Username = username,
+                mail ="",
                 Password = password
             };
             var response = await _httpClient.PostAsJsonAsync("api/User/login", payload);

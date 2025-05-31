@@ -11,7 +11,7 @@ public partial class MascotasPage : ContentView
     }
     private async void OnAddPetClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(AgregarPetPage));
+        await Shell.Current.GoToAsync("//AgregarPetPage");
     }
 
 

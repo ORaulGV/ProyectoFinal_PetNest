@@ -4,8 +4,9 @@
              x:Class="ProyectoFinal.Views.CuentaPage">
 
     <ContentView.BindingContext>
-        <vm:MainPagePetsViewModel />
+        <vm:UserViewModel/>
     </ContentView.BindingContext>
+
 
     <ScrollView>
         <StackLayout Padding="20" Spacing="25">
@@ -31,7 +32,7 @@
                     Clicked="CerrarSesion_Clicked" />
 
             <Button Text="Eliminar Cuenta"
-                    Command="{Binding EliminarCuentaCommand}"
+                    Command="{Binding EliminarUsuarioCommand}"
                     TextColor="White"
                     BackgroundColor="Red"
                     CornerRadius="10"

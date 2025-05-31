@@ -22,6 +22,8 @@
     <ShellContent Route="SplashPage" ContentTemplate="{DataTemplate views:SplashPage}" />
     <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
     <ShellContent Route="RegistroPage" ContentTemplate="{DataTemplate views:RegistroPage}" />
+    <ShellContent Route="AgregarPetPage" ContentTemplate="{DataTemplate views:AgregarPetPage}" />
+    <ShellContent Route="AgregarAlarmaPage" ContentTemplate="{DataTemplate views:AgregarAlarmaPage}" />
     
     
 </Shell>
