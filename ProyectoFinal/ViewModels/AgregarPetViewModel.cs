@@ -20,7 +20,6 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         public async Task GuardarMascota()
         {
-            System.Diagnostics.Debug.WriteLine($"UserId: {SessionManager.UsuarioActual.IdUser}, PetName: {petname}, Especie: {Specie}, Age: {AgeText}");
 
             if (string.IsNullOrWhiteSpace(Petname) || string.IsNullOrWhiteSpace(Specie) || string.IsNullOrWhiteSpace(AgeText))
             {

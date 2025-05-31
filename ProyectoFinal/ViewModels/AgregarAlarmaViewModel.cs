@@ -20,7 +20,6 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         public async Task GuardarAlarma()
         {
-            System.Diagnostics.Debug.WriteLine($"UserId: {SessionManager.UsuarioActual.IdUser}, Title: {alarmname}, Hour: {hour}, Frecuency: {frequency}");
 
             if (string.IsNullOrWhiteSpace(Alarmname) || string.IsNullOrWhiteSpace(Hour) || string.IsNullOrWhiteSpace(Frequency))
             {

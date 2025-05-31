@@ -17,7 +17,6 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         public async Task IniciarSesion()
         {
-            System.Diagnostics.Debug.WriteLine($"Username: {Username}, Password: {Password}");
 
             var usuario = await UserServices.LoginAsync(username, password);
 
