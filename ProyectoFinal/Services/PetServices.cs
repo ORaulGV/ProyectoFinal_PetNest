@@ -15,6 +15,11 @@ namespace ProyectoFinal.Services
         public static async Task<bool> CreatePetAsync(Mascota nuevaMascota)
         {
             var response = await _httpClient.PostAsJsonAsync("api/Pet/create", nuevaMascota);
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                System.Diagnostics.Debug.WriteLine($"Error al crear mascota: {response.StatusCode} - {errorContent}");
+            }
             return response.IsSuccessStatusCode;
         }
 

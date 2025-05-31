@@ -8,7 +8,7 @@ public partial class AgregarPetPage : ContentPage
 	}
     private async void OnRegresarClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync("//MainPagePets");
     }
 
 }

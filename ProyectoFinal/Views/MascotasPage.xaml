@@ -5,10 +5,6 @@
              x:Class="ProyectoFinal.Views.MascotasPage"  
 >
 
-    <ContentView.BindingContext>  
-        <vm:MascotasViewModel />  
-    </ContentView.BindingContext>  
-
     <Grid>  
  
         <ScrollView>

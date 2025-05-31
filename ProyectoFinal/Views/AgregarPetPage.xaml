@@ -14,25 +14,25 @@
         <StackLayout Padding="20" Spacing="20">
             <Label Text="Nombre:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Nombre"
-               Text="{Binding Mascota.PetName}"
+               Text="{Binding Petname}"
                PlaceholderColor="Gray"
                TextColor="{DynamicResource TextColor}" />
 
             <Label Text="Especie:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Especie"
-               Text="{Binding Mascota.Specie}"
+               Text="{Binding Specie}"
                PlaceholderColor="Gray"
                TextColor="{DynamicResource TextColor}" />
 
             <Label Text="Edad:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Edad"
-                   Text="{Binding Mascota.Age}"
+                   Text="{Binding AgeText}"
                    Keyboard="Numeric"
                    PlaceholderColor="Gray"
                    TextColor="{DynamicResource TextColor}" />
 
             <Button Text="Guardar"
-                    Command="{Binding GuardarCommand}"
+                    Command="{Binding GuardarMascotaCommand}"
                     BackgroundColor="#2774E6"
                     TextColor="White"
                     CornerRadius="10" />
