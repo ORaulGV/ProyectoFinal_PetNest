@@ -1,33 +1,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.Views.AgregarAlarmaPage"
+             xmlns:vm="clr-namespace:ProyectoFinal.ViewModels"
              Title="Agregar Alarma"
              BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:AgregarAlarmaViewModel />
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
             <Label Text="Nombre de la alarma:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Nombre (Comida/Vacuna para...)"
-                   Text="{Binding Alarma.AlarmName}"
+                   Text="{Binding Alarmname}"
                    PlaceholderColor="Gray"
                    TextColor="{DynamicResource TextColor}" />
 
             <Label Text="Hora:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Hora (formato HH:MM)"
-                   Text="{Binding Alarma.Hour}"
+                   Text="{Binding Hour}"
                    Keyboard="Numeric"
                    PlaceholderColor="Gray"
                    TextColor="{DynamicResource TextColor}" />
 
             <Label Text="Frecuencia:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Frecuencia (diaria, semanal...)"
-                   Text="{Binding Alarma.Frecuency}"
+                   Text="{Binding Frequency}"
                    PlaceholderColor="Gray"
                    TextColor="{DynamicResource TextColor}" />
 
 
             <Button Text="Guardar"
-                    Command="{Binding GuardarCommand}"
+                    Command="{Binding GuardarAlarmaCommand}"
                     BackgroundColor="#2774E6"
                     TextColor="White"
                     CornerRadius="10" />

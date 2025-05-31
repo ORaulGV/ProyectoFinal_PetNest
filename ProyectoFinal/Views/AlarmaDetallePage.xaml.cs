@@ -2,22 +2,29 @@ using ProyectoFinal.ViewModels;
 using ProyectoFinal.Models;
 namespace ProyectoFinal.Views;
 
+
+[QueryProperty(nameof(IdAlarm), "IdAlarm")]
 public partial class AlarmaDetallePage : ContentPage
 {
     public AlarmaDetallePage(Alarms alarma)
     {
         InitializeComponent();
-        BindingContext = new AlarmaDetalleViewModel(alarma);
     }
 
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
 
-        if (BindingContext is AlarmaDetalleViewModel vm)
+    private int _idAlarm;
+    public int IdAlarm
+    {
+        get => _idAlarm;
+        set
         {
-            vm.IsEditing = false;
-            vm.IsViewing = true;
+            _idAlarm = value;
+            LoadAlarm(_idAlarm);
         }
+    }
+    private async void LoadAlarm(int idAlarm)
+    {
+        var alarm = await ProyectoFinal.Services.AlarmServices.GetAlarmByIdAsync(idAlarm);
+        BindingContext = new AlarmaDetalleViewModel(alarm);
     }
 }

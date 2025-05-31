@@ -17,7 +17,9 @@ namespace ProyectoFinal.ViewModels
         public async Task CargarAlarmas()
         {
             if (!SessionManager.SesionActiva)
+            {
                 return;
+            }
             int idUser = SessionManager.UsuarioActual.IdUser;
             var lista = await AlarmServices.GetAlarmsByUserIdAsync(idUser);
 
@@ -30,13 +32,10 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         private async Task SeleccionarAlarma(Alarms alarma)
         {
-            if (alarma != null)
-            {
-                await Shell.Current.GoToAsync(nameof(AlarmaDetallePage), new Dictionary<string, object>
-                {
-                    ["Alarma"] = alarma
-                });
-            }
+            if (alarma == null) return;
+
+            await Shell.Current.GoToAsync($"{nameof(AlarmaDetallePage)}?IdAlarm={alarma.IdAlarm}");
+            
         }
 
         public AlarmsViewModel()

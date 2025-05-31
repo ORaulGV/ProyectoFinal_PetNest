@@ -34,11 +34,11 @@
                         Command="{Binding SaveChangesCommand}"  
                         IsVisible="{Binding IsEditing}"  
                         TextColor="White"   
-                        BorderColor="#2774E6"
+                        BackgroundColor="#2774E6"
                 />  
 
             <Button Text="Eliminar" 
-                    Command="{Binding DeleteCommand}"
+                    Command="{Binding EliminarCommand}"
                     TextColor="White"   
                     BackgroundColor="Red"/>  
         </StackLayout>  

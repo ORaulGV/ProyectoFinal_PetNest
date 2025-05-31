@@ -47,7 +47,7 @@ namespace ProyectoFinal.ViewModels
             if (success)
             {
                 await Shell.Current.DisplayAlert("Éxito", "Mascota agregada correctamente.", "Aceptar");
-                await Shell.Current.GoToAsync("//MainPagePets"); // Navega a MainPagePets
+                await Shell.Current.GoToAsync("//MainPagePets");
             }
             else
             {

@@ -11,7 +11,7 @@ public partial class AlarmsPage : ContentView
 
     private async void OnAddAlarmClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(AgregarAlarmaPage));
+        await Shell.Current.GoToAsync("//AgregarAlarmaPage");
     }
 
 

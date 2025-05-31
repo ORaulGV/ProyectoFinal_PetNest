@@ -18,7 +18,9 @@ public partial class MainPagePets : ContentPage
     {
         base.OnAppearing();
         if (BindingContext is MascotasViewModel vm)
+        {
             vm.CargarMascotasCommand.Execute(null);
+        }
     }
 
     private void ShowPetsPage(object sender, EventArgs e)
@@ -37,6 +39,10 @@ public partial class MainPagePets : ContentPage
         PetsView.IsVisible = false;
         AlarmsView.IsVisible = true;
         CuentaView.IsVisible = false;
+        if (AlarmsView.BindingContext is AlarmsViewModel vm)
+        {
+            vm.CargarAlarmasCommand.Execute(null);
+        }
     }
 
     private void ShowCuentaPage(object sender, EventArgs e)
