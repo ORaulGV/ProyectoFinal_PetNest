@@ -60,8 +60,6 @@ namespace ProyectoFinal.Services
 
             //No crear un error si no hay mascotas, retornar una lista vacía
             //Ya que al crear una cuenta de usuario, no se tiene mascotas creadas aún
-
-
         }
     }
 }

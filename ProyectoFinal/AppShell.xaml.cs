@@ -8,7 +8,7 @@ namespace ProyectoFinal
             InitializeComponent(); // Esto carga el XAML
             Routing.RegisterRoute("LoginPage", typeof(LoginPage));
             Routing.RegisterRoute("RegistroPage", typeof(RegistroPage));
-
+            Routing.RegisterRoute(nameof(MascotaDetallePage), typeof(MascotaDetallePage));
         }
     }
 }

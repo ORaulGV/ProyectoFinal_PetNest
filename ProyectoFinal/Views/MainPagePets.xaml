@@ -7,9 +7,9 @@
              Background="{DynamicResource BackgroundColor}">
 
     <ContentPage.BindingContext>
-        <vm:MainPagePetsViewModel/>
+        <vm:MascotasViewModel />
     </ContentPage.BindingContext>
-
+    <views:MascotasPage/>
 
     <Grid RowDefinitions="Auto, Auto, *">
         <StackLayout Background="{DynamicResource SecondaryColor}" Padding="20,40,20,10">

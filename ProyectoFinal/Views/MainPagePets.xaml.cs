@@ -14,11 +14,22 @@ public partial class MainPagePets : ContentPage
         
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        if (BindingContext is MascotasViewModel vm)
+            vm.CargarMascotasCommand.Execute(null);
+    }
+
     private void ShowPetsPage(object sender, EventArgs e)
     {
         PetsView.IsVisible = true;
         AlarmsView.IsVisible = false;
         CuentaView.IsVisible = false;
+        if (PetsView.BindingContext is MascotasViewModel vm)
+        {
+            vm.CargarMascotasCommand.Execute(null);
+        }
     }
 
     private void ShowAlarmsPage(object sender, EventArgs e)

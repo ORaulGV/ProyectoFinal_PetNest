@@ -2,13 +2,15 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              xmlns:vm="clr-namespace:ProyectoFinal.ViewModels"  
-             x:Class="ProyectoFinal.Views.MascotasPage"  
->
+             x:Class="ProyectoFinal.Views.MascotasPage"
+             x:Name="Raiz">
+    <ContentView.BindingContext>
+        <vm:MascotasViewModel />
+    </ContentView.BindingContext>
 
     <Grid>  
- 
         <ScrollView>
-            <StackLayout Padding="20" Spacing="15" BindableLayout.ItemsSource="{Binding Mascotas} ">  
+            <StackLayout Padding="20" Spacing="15" BindableLayout.ItemsSource="{Binding Mascotas}">  
                 <BindableLayout.ItemTemplate>  
                     <DataTemplate>  
                         <Border Background="{DynamicResource BackSecondaryColor}"  
