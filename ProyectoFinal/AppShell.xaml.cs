@@ -11,6 +11,7 @@ namespace ProyectoFinal
             Routing.RegisterRoute(nameof(MascotaDetallePage), typeof(MascotaDetallePage));
             Routing.RegisterRoute(nameof(AlarmaDetallePage), typeof(AlarmaDetallePage));
 
+
         }
     }
 }

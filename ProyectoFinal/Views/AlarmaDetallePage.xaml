@@ -23,7 +23,7 @@
 
             <Label Text="Frecuencia:" TextColor="{DynamicResource TextColor}" />
             <Entry Placeholder="Frecuencia (diaria, semanal...)"
-                   Text="{Binding Alarma.Frecuency}"
+                   Text="{Binding Alarma.Frequency}"
                    TextColor="{DynamicResource TextColor}" 
                    IsEnabled="{Binding IsEditing}" />
 
@@ -40,7 +40,7 @@
                     BackgroundColor="#2774E6"/>
 
             <Button Text="Eliminar" 
-                    Command="{Binding DeleteCommand}"
+                    Command="{Binding EliminarCommand}"
                     TextColor="White" 
                     BackgroundColor="Red"/>
         </StackLayout>

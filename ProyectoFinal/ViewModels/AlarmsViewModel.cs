@@ -11,7 +11,7 @@ namespace ProyectoFinal.ViewModels
     public partial class AlarmsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ObservableCollection<Alarms> alarma = new();
+        private ObservableCollection<Alarms> alarms = new();
 
         [RelayCommand]
         public async Task CargarAlarmas()
@@ -25,7 +25,7 @@ namespace ProyectoFinal.ViewModels
 
             if (lista != null)
             {
-                Alarma = new ObservableCollection<Alarms>(lista);
+                Alarms = new ObservableCollection<Alarms>(lista);
             }
         }
 
@@ -35,8 +35,9 @@ namespace ProyectoFinal.ViewModels
             if (alarma == null) return;
 
             await Shell.Current.GoToAsync($"{nameof(AlarmaDetallePage)}?IdAlarm={alarma.IdAlarm}");
-            
         }
+
+
 
         public AlarmsViewModel()
         {
